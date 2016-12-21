@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
+ * 
+ * Could not load the following classes:
+ *  org.springframework.stereotype.Controller
+ *  org.springframework.web.bind.annotation.RequestMapping
+ *  org.springframework.web.bind.annotation.ResponseBody
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.controller;
 
@@ -9,17 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- *
- * @author Bernat
- */
 @Controller
-public class MainController
-{
-    @RequestMapping("/")
+public class MainController {
+    @RequestMapping(value={"/"})
     @ResponseBody
-    public String hello()
-    {
+    public String hello() {
         return "OK";
     }
 }
+

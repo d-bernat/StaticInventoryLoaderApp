@@ -1,7 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
+ * 
+ * Could not load the following classes:
+ *  javax.servlet.http.HttpServletRequest
+ *  org.springframework.beans.factory.annotation.Autowired
+ *  org.springframework.boot.autoconfigure.web.ErrorAttributes
+ *  org.springframework.boot.autoconfigure.web.ErrorController
+ *  org.springframework.http.HttpStatus
+ *  org.springframework.http.ResponseEntity
+ *  org.springframework.stereotype.Controller
+ *  org.springframework.web.bind.annotation.RequestMapping
+ *  org.springframework.web.bind.annotation.ResponseBody
+ *  org.springframework.web.context.request.RequestAttributes
+ *  org.springframework.web.context.request.ServletRequestAttributes
+ *  org.springframework.web.servlet.ModelAndView
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.controller;
 
@@ -19,102 +31,58 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- *
- * @author Bernat
- */
 @Controller
-public class AppErrorController implements ErrorController
-{
-    /**
-     * Error Attributes in the Application
-     */
+public class AppErrorController
+implements ErrorController {
     private final ErrorAttributes errorAttributes;
+    private static final String ERROR_PATH = "/error";
 
-    private final static String ERROR_PATH = "/error";
-
-    /**
-     * Controller for the Error Controller
-     *
-     * @param errorAttributes
-     */
     @Autowired
-    public AppErrorController(ErrorAttributes errorAttributes)
-    {
+    public AppErrorController(ErrorAttributes errorAttributes) {
         this.errorAttributes = errorAttributes;
     }
 
-    /**
-     * Supports the HTML Error View
-     *
-     * @param request
-     * @return
-     */
-    @RequestMapping(value = ERROR_PATH, produces = "text/html")
-    public ModelAndView errorHtml(HttpServletRequest request)
-    {
-        return new ModelAndView("/errors/error", "attributes", getErrorAttributes(request, false));
+    @RequestMapping(value={"/error"}, produces={"text/html"})
+    public ModelAndView errorHtml(HttpServletRequest request) {
+        return new ModelAndView("/errors/error", "attributes", this.getErrorAttributes(request, false));
     }
 
-    /**
-     * Supports other formats like JSON, XML
-     *
-     * @param request
-     * @return
-     */
-    @RequestMapping(value = ERROR_PATH)
+    @RequestMapping(value={"/error"})
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> error(HttpServletRequest request)
-    {
-        Map<String, Object> body = getErrorAttributes(request, getTraceParameter(request));
-        HttpStatus status = getStatus(request);
-        return new ResponseEntity<>(body, status);
+    public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) {
+        Map<String, Object> body = this.getErrorAttributes(request, this.getTraceParameter(request));
+        HttpStatus status = this.getStatus(request);
+        return new ResponseEntity(body, status);
     }
 
-    /**
-     * Returns the path of the error page.
-     *
-     * @return the error path
-     */
-    @Override
-    public String getErrorPath()
-    {
-        return ERROR_PATH;
+    public String getErrorPath() {
+        return "/error";
     }
 
-    private boolean getTraceParameter(HttpServletRequest request)
-    {
+    private boolean getTraceParameter(HttpServletRequest request) {
         String parameter = request.getParameter("trace");
-        if (parameter == null)
-        {
+        if (parameter == null) {
             return false;
         }
         return !"false".equals(parameter.toLowerCase());
     }
 
-    private Map<String, Object> getErrorAttributes(HttpServletRequest request,
-            boolean includeStackTrace)
-    {
-        RequestAttributes requestAttributes = new ServletRequestAttributes(request);
-        return this.errorAttributes.getErrorAttributes(requestAttributes,
-                includeStackTrace);
+    private Map<String, Object> getErrorAttributes(HttpServletRequest request, boolean includeStackTrace) {
+        ServletRequestAttributes requestAttributes = new ServletRequestAttributes(request);
+        return this.errorAttributes.getErrorAttributes((RequestAttributes)requestAttributes, includeStackTrace);
     }
 
-    private HttpStatus getStatus(HttpServletRequest request)
-    {
-        Integer statusCode = (Integer) request
-                .getAttribute("javax.servlet.error.status_code");
-        if (statusCode != null)
-        {
-            try
-            {
-                return HttpStatus.valueOf(statusCode);
+    private HttpStatus getStatus(HttpServletRequest request) {
+        Integer statusCode = (Integer)request.getAttribute("javax.servlet.error.status_code");
+        if (statusCode != null) {
+            try {
+                return HttpStatus.valueOf((int)statusCode);
             }
-            catch (Exception ex)
-            {
+            catch (Exception exception) {
+                // empty catch block
             }
         }
         return HttpStatus.INTERNAL_SERVER_ERROR;
     }
-
 }
+

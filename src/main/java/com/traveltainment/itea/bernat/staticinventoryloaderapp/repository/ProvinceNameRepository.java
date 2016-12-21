@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
+ * 
+ * Could not load the following classes:
+ *  org.springframework.data.domain.Page
+ *  org.springframework.data.domain.Pageable
+ *  org.springframework.data.jpa.repository.JpaRepository
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.repository;
 
@@ -11,16 +14,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Bernat
- */
-public interface ProvinceNameRepository extends JpaRepository<ProvinceName, Long>
-{
-    @Override
-    Page<ProvinceName> findAll(Pageable pageable);
-    
-    @Override
-    List<ProvinceName> findAll();    
+public interface ProvinceNameRepository
+extends JpaRepository<ProvinceName, Long> {
+    public Page<ProvinceName> findAll(Pageable var1);
+
+    public List<ProvinceName> findAll();
+
+    public List<ProvinceName> findByLocaleLanguage(String var1);
 }
 

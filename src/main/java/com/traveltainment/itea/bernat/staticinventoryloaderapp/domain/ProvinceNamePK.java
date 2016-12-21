@@ -1,31 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.domain;
 
+import com.traveltainment.itea.bernat.staticinventoryloaderapp.domain.PropertyNamePK;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author Bernat
- */
-public class ProvinceNamePK implements Serializable
-{
+public class ProvinceNamePK
+implements Serializable {
     private String sourceCountry;
     private String sourceProvince;
     private String localeLanguage;
 
-    public ProvinceNamePK()
-    {
-
-    }
-
-    @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 29 * hash + Objects.hashCode(this.sourceCountry);
         hash = 29 * hash + Objects.hashCode(this.sourceProvince);
@@ -33,58 +21,42 @@ public class ProvinceNamePK implements Serializable
         return hash;
     }
 
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (obj instanceof PropertyNamePK)
-        {
-            PropertyNamePK pk = (PropertyNamePK) obj;
-
-            if (!pk.getLocaleLanguage().equals(localeLanguage))
-            {
+    public boolean equals(Object obj) {
+        if (obj instanceof PropertyNamePK) {
+            PropertyNamePK pk = (PropertyNamePK)obj;
+            if (!pk.getLocaleLanguage().equals(this.localeLanguage)) {
                 return false;
             }
-
-            if (!pk.getLocaleLanguage().equals(sourceProvince))
-            {
+            if (!pk.getLocaleLanguage().equals(this.sourceProvince)) {
                 return false;
             }
-            
-            return pk.getSourceProperty().equals(localeLanguage);
+            return pk.getSourceProperty().equals(this.localeLanguage);
         }
-
         return false;
     }
 
-    public String getSourceCountry()
-    {
-        return sourceCountry;
+    public String getSourceCountry() {
+        return this.sourceCountry;
     }
 
-    public void setSourceCountry(String sourceCountry)
-    {
+    public void setSourceCountry(String sourceCountry) {
         this.sourceCountry = sourceCountry;
     }
 
-    public String getSourceProvince()
-    {
-        return sourceProvince;
+    public String getSourceProvince() {
+        return this.sourceProvince;
     }
 
-    public void setSourceProvince(String sourceProvince)
-    {
+    public void setSourceProvince(String sourceProvince) {
         this.sourceProvince = sourceProvince;
     }
 
-    public String getLocaleLanguage()
-    {
-        return localeLanguage;
+    public String getLocaleLanguage() {
+        return this.localeLanguage;
     }
 
-    public void setLocaleLanguage(String localeLanguage)
-    {
+    public void setLocaleLanguage(String localeLanguage) {
         this.localeLanguage = localeLanguage;
     }
-
-
 }
+

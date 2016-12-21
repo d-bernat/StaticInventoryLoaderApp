@@ -1,71 +1,48 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author Bernat
- */
-public class PropertyNamePK implements Serializable
-{
+public class PropertyNamePK
+implements Serializable {
     private Integer sourceProperty;
     private String localeLanguage;
 
-    public PropertyNamePK()
-    {
-
-    }
-
-    @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 29 * hash + Objects.hashCode(this.sourceProperty);
         hash = 29 * hash + Objects.hashCode(this.localeLanguage);
         return hash;
     }
 
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (obj instanceof PropertyNamePK)
-        {
-            PropertyNamePK pk = (PropertyNamePK) obj;
-
-            if (!pk.getLocaleLanguage().equals(localeLanguage))
-            {
+    public boolean equals(Object obj) {
+        if (obj instanceof PropertyNamePK) {
+            PropertyNamePK pk = (PropertyNamePK)obj;
+            if (!pk.getLocaleLanguage().equals(this.localeLanguage)) {
                 return false;
             }
-
-            return pk.getSourceProperty().equals(sourceProperty);
+            return pk.getSourceProperty().equals(this.sourceProperty);
         }
-
         return false;
     }
 
-    public Integer getSourceProperty()
-    {
-        return sourceProperty;
+    public Integer getSourceProperty() {
+        return this.sourceProperty;
     }
 
-    public void setSourceProperty(Integer sourceProperty)
-    {
+    public void setSourceProperty(Integer sourceProperty) {
         this.sourceProperty = sourceProperty;
     }
 
-    public String getLocaleLanguage()
-    {
-        return localeLanguage;
+    public String getLocaleLanguage() {
+        return this.localeLanguage;
     }
 
-    public void setLocaleLanguage(String localLanguage)
-    {
+    public void setLocaleLanguage(String localLanguage) {
         this.localeLanguage = localLanguage;
     }
 }
+

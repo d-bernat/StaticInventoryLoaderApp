@@ -1,7 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Decompiled with CFR 0_119.
+ * 
+ * Could not load the following classes:
+ *  javax.persistence.Column
+ *  javax.persistence.Entity
+ *  javax.persistence.Id
+ *  javax.persistence.IdClass
+ *  javax.persistence.Table
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.domain;
 
@@ -12,52 +17,43 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
-/**
- *
- * @author Bernat
- */
 @Entity
-@Table
-@IdClass(value = PropertyNamePK.class)
-public class PropertyName implements Serializable
-{
-
+@Table(name="PropertyName")
+@IdClass(value=PropertyNamePK.class)
+public class PropertyName
+implements Serializable,
+NamedInventory {
     @Id
     private Integer sourceProperty;
     @Id
-    @Column(name = "localeLanguage", columnDefinition = "char(5)")
+    @Column(name="localeLanguage", columnDefinition="char(5)")
     private String localeLanguage;
-    @Column(name = "name", nullable = false, insertable = false, updatable = false)
+    @Column(name="name", nullable=false, insertable=false, updatable=false)
     private String name;
 
-    public Integer getSourceProperty()
-    {
-        return sourceProperty;
+    public Integer getSourceProperty() {
+        return this.sourceProperty;
     }
 
-// setters and getters
-    public void setSourceProperty(Integer sourceProperty)
-    {
+    public void setSourceProperty(Integer sourceProperty) {
         this.sourceProperty = sourceProperty;
     }
 
-    public String getLocaleLanguage()
-    {
-        return localeLanguage;
+    public String getLocaleLanguage() {
+        return this.localeLanguage;
     }
 
-    public void setLocalLanguage(String localLanguage)
-    {
+    public void setLocalLanguage(String localLanguage) {
         this.localeLanguage = localLanguage;
     }
 
-    public String getName()
-    {
-        return name;
+    @Override
+    public String getName() {
+        return this.name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 }
+
