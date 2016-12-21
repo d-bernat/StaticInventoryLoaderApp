@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Province</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Province</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>country</td>
+					<td>id</td>
+					<td>region</td>
+					<td>geoAreaX1</td>
+                                        <td>geoAreaY1</td>
+                                        <td>geoAreaX2</td>
+                                        <td>geoAreaY2</td>
+                                        <td>geoCentroidX</td>
+                                        <td>geoCentroidY</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${provincies.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="province : ${provincies}">
+                                        <td th:text="${province.country}"/>
+					<td th:text="${province.id}"/>
+					<td th:text="${province.geoAreaX1}"/>
+                                        <td th:text="${province.geoAreaY1}"/>
+                                        <td th:text="${province.geoAreaX2}"/>
+                                        <td th:text="${province.geoAreaY2}"/>
+					<td th:text="${province.geoCentroidX}"/>
+                                        <td th:text="${province.geoCentroidY}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

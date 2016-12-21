@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Country</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Country</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>alpha3</td>
+                                        <td>numeric</td>
+                                        <td>continent</td>
+					<td>geoAreaX1</td>
+                                        <td>geoAreaY1</td>
+                                        <td>geoAreaX2</td>
+                                        <td>geoAreaY2</td>
+                                        <td>geoCentroidX</td>
+                                        <td>geoCentroidY</td>
+                                        <td>contentReference</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${countries.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="country : ${countries}">
+                                        <td th:text="${country.id}"/>
+					<td th:text="${country.alpha3}"/>
+					<td th:text="${country.numeric}"/>
+					<td th:text="${country.continent}"/>
+					<td th:text="${country.geoAreaX1}"/>
+                                        <td th:text="${country.geoAreaY1}"/>
+                                        <td th:text="${country.geoAreaX2}"/>
+                                        <td th:text="${country.geoAreaY2}"/>
+					<td th:text="${country.geoCentroidX}"/>
+                                        <td th:text="${country.geoCentroidY}"/>
+                                        <td th:text="${country.contentReference}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

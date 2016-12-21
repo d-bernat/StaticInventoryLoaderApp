@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Province Name</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Province Name</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>sourceCountry</td>
+                                        <td>sourceProvince</td>
+					<td>localeLanguage</td>
+                                        <td>name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${provincenames.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="provincename : ${provincenames}">
+					<td th:text="${provincename.sourceCountry}"/>
+                                        <td th:text="${provincename.sourceProvince}"/>
+					<td th:text="${provincename.localeLanguage}"/>
+                                        <td th:text="${provincename.name}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

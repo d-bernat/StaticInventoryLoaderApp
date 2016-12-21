@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Country Name</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Country Name</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>sourceCountry</td>
+					<td>localeLanguage</td>
+                                        <td>name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${countrynames.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="countryname : ${countrynames}">
+					<td th:text="${countryname.sourceCountry}"/>
+					<td th:text="${countryname.localeLanguage}"/>
+                                        <td th:text="${countryname.name}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

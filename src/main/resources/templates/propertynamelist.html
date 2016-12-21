@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>PropertyName : View all</title>
+</head>
+<body>
+	<h1 layout:fragment="header">PropertyName</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>sourceProperty</td>
+					<td>localeLanguage</td>
+					<td>name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${propertynames.empty}">
+					<td colspan="3">No properties</td>
+				</tr>
+				<tr th:each="propertyname : ${propertynames}">
+					<td th:text="${propertyname.sourceProperty}">1</td>
+					<td th:text="${propertyname.localeLanguage}">Locale Language</td>
+					<td th:text="${propertyname.name}">Name</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

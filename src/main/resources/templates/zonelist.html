@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Zone</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Zone</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>location</td>
+					<td>id</td>
+					<td>type</td>
+                                        <td>geoAreaX1</td>
+                                        <td>geoAreaY1</td>
+                                        <td>geoAreaX2</td>
+                                        <td>geoAreaY2</td>
+                                        <td>geoCentroidX</td>
+                                        <td>geoCentroidY</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${zones.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="zone : ${zones}">
+					<td th:text="${zone.location}"/>
+					<td th:text="${zone.id}"/>
+					<td th:text="${zone.type}"/>
+                                        <td th:text="${zone.geoAreaX1}"/>
+                                        <td th:text="${zone.geoAreaY1}"/>
+                                        <td th:text="${zone.geoAreaX2}"/>
+                                        <td th:text="${zone.geoAreaY2}"/>
+                                        <td th:text="${zone.geoCentroidX}"/>
+                                        <td th:text="${zone.geoCentroidY}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

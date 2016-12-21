@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Location</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Location</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>iata</td>
+					<td>region</td>
+                                        <td>area</td>
+                                        <td>country</td>
+					<td>province</td>
+					<td>localTime</td>
+					<td>geoAreaX1</td>
+                                        <td>geoAreaY1</td>
+                                        <td>geoAreaX2</td>
+                                        <td>geoAreaY2</td>
+                                        <td>geoCentroidX</td>
+                                        <td>geoCentroidY</td>
+                                        <td>source</td>
+                                        <td>contentReference</td>
+                                        <td>referenceLocation</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${locations.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="location : ${locations}">
+                                        <td th:text="${location.id}"/>
+					<td th:text="${location.iata}"/>
+					<td th:text="${location.region}"/>
+					<td th:text="${location.area}"/>
+                                        <td th:text="${location.country}"/>
+                                        <td th:text="${location.province}"/>
+					<td th:text="${location.localTime}"/>
+					<td th:text="${location.geoAreaX1}"/>
+                                        <td th:text="${location.geoAreaY1}"/>
+                                        <td th:text="${location.geoAreaX2}"/>
+                                        <td th:text="${location.geoAreaY2}"/>
+					<td th:text="${location.geoCentroidX}"/>
+                                        <td th:text="${location.geoCentroidY}"/>
+                                        <td th:text="${location.source}"/>
+                                        <td th:text="${location.contentReference}"/>
+                                        <td th:text="${location.referenceLocation}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

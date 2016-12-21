@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Property</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Property</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>type</td>
+					<td>source</td>
+                                        <td>location</td>
+                                        <td>zone</td>
+                                        <td>standardCategory</td>
+                                        <td>geoLocationX</td>
+                                        <td>geoLocationY</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${properties.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="property : ${properties}">
+					<td th:text="${property.id}"/>
+					<td th:text="${property.type}"/>
+					<td th:text="${property.source}"/>
+                                        <td th:text="${property.location}"/>
+                                        <td th:text="${property.zone}"/>
+                                        <td th:text="${property.standardCategory}"/>
+                                        <td th:text="${property.geoLocationX}"/>
+                                        <td th:text="${property.geoLocationY}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

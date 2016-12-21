@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Zone Name</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Zone Name</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>sourceLocation</td>
+					<td>sourceZone</td>
+					<td>localeLanguage</td>
+                                        <td>name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${zonenames.empty}">
+					<td colspan="3">Table is empty.</td>
+				</tr>
+				<tr th:each="zonename : ${zonenames}">
+					<td th:text="${zonename.sourceLocation}"/>
+					<td th:text="${zonename.sourceZone}"/>
+					<td th:text="${zonename.localeLanguage}"/>
+                                        <td th:text="${zonename.name}"/>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
