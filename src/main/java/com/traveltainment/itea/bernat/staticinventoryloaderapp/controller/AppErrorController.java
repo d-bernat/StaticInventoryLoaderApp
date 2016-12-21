@@ -1,20 +1,3 @@
-/*
- * Decompiled with CFR 0_119.
- * 
- * Could not load the following classes:
- *  javax.servlet.http.HttpServletRequest
- *  org.springframework.beans.factory.annotation.Autowired
- *  org.springframework.boot.autoconfigure.web.ErrorAttributes
- *  org.springframework.boot.autoconfigure.web.ErrorController
- *  org.springframework.http.HttpStatus
- *  org.springframework.http.ResponseEntity
- *  org.springframework.stereotype.Controller
- *  org.springframework.web.bind.annotation.RequestMapping
- *  org.springframework.web.bind.annotation.ResponseBody
- *  org.springframework.web.context.request.RequestAttributes
- *  org.springframework.web.context.request.ServletRequestAttributes
- *  org.springframework.web.servlet.ModelAndView
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.controller;
 
 import java.util.Map;

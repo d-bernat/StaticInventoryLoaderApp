@@ -1,18 +1,3 @@
-/*
- * Decompiled with CFR 0_119.
- * 
- * Could not load the following classes:
- *  org.springframework.beans.factory.annotation.Autowired
- *  org.springframework.data.domain.Page
- *  org.springframework.data.domain.PageRequest
- *  org.springframework.data.domain.Pageable
- *  org.springframework.stereotype.Controller
- *  org.springframework.web.bind.annotation.PathVariable
- *  org.springframework.web.bind.annotation.RequestMapping
- *  org.springframework.web.bind.annotation.RequestMethod
- *  org.springframework.web.bind.annotation.ResponseBody
- *  org.springframework.web.servlet.ModelAndView
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.controller;
 
 import com.traveltainment.itea.bernat.staticinventoryloaderapp.domain.LocationName;

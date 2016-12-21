@@ -1,11 +1,3 @@
-/*
- * Decompiled with CFR 0_119.
- * 
- * Could not load the following classes:
- *  org.springframework.boot.SpringApplication
- *  org.springframework.boot.autoconfigure.EnableAutoConfiguration
- *  org.springframework.boot.autoconfigure.SpringBootApplication
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp;
 
 import org.springframework.boot.SpringApplication;

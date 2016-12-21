@@ -1,16 +1,5 @@
-/*
- * Decompiled with CFR 0_119.
- * 
- * Could not load the following classes:
- *  javax.persistence.Column
- *  javax.persistence.Entity
- *  javax.persistence.Id
- *  javax.persistence.IdClass
- *  javax.persistence.Table
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.domain;
 
-import com.traveltainment.itea.bernat.staticinventoryloaderapp.domain.ProvincePK;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;

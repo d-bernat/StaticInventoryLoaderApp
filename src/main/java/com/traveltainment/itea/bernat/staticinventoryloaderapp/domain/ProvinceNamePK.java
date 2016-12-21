@@ -1,9 +1,5 @@
-/*
- * Decompiled with CFR 0_119.
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.domain;
 
-import com.traveltainment.itea.bernat.staticinventoryloaderapp.domain.PropertyNamePK;
 import java.io.Serializable;
 import java.util.Objects;
 

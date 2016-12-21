@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR 0_119.
- */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp.utility;
 
 import com.traveltainment.itea.bernat.staticinventoryloaderapp.domain.NamedInventory;
