@@ -11,5 +11,11 @@ public class MainController {
     public String hello() {
         return "OK";
     }
+    
+    @RequestMapping(value={"/info"})
+    @ResponseBody
+    public String info() {
+        return "this is rest app based on spring boot";
+    }
 }
 

@@ -55,4 +55,10 @@ public class MainControllerTest
         assertEquals(expResult, result);
     }
     
+    @Test
+    public void testInfo()
+    {
+        MainController instance = new MainController();
+        assertTrue(instance.info().length() > 0);
+    }    
 }
