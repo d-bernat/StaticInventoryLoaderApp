@@ -15,7 +15,7 @@ public class MainController {
     @RequestMapping(value={"/info"})
     @ResponseBody
     public String info() {
-        return "this is rest app based on spring boot";
+        return "This is the Spring Boot/REST App";
     }
 }
 
