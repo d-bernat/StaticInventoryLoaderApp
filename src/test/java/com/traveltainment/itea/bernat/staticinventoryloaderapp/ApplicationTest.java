@@ -5,12 +5,18 @@
  */
 package com.traveltainment.itea.bernat.staticinventoryloaderapp;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sql.DataSource;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,8 +28,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //@SpringApplicationConfiguration(classes = Application.class)
 public class ApplicationTest
 {
-    //@Autowired
-    //DataSource dataSource;
+   // @Autowired
+   // DataSource dataSource;
     
     public ApplicationTest()
     {
@@ -55,6 +61,16 @@ public class ApplicationTest
     @Test
     public void testMain()
     {
+            
+        /*try
+        {
+            dataSource.getConnection();
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(ApplicationTest.class.getName()).log(Level.SEVERE, null, ex);
+            fail("db connection failed");
+        }*/
     }
     
 }

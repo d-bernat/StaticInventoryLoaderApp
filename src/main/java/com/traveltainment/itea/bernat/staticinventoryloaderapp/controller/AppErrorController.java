@@ -3,6 +3,7 @@ package com.traveltainment.itea.bernat.staticinventoryloaderapp.controller;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.web.ErrorAttributes;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.HttpStatus;
@@ -17,14 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AppErrorController
 implements ErrorController {
-    private final ErrorAttributes errorAttributes;
     private static final String ERROR_PATH = "/error";
 
     @Autowired
-    public AppErrorController(ErrorAttributes errorAttributes) {
-        this.errorAttributes = errorAttributes;
-    }
-
+    private ErrorAttributes errorAttributes;
+    
     @RequestMapping(value={"/error"}, produces={"text/html"})
     public ModelAndView errorHtml(HttpServletRequest request) {
         return new ModelAndView("/errors/error", "attributes", this.getErrorAttributes(request, false));

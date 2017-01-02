@@ -15,7 +15,7 @@ public class MainController {
     @RequestMapping(value={"/info"})
     @ResponseBody
     public String info() {
-        return "This is the Spring Boot/REST App";
+        return "This is the Spring Boot/REST Application";
     }
 }
 
